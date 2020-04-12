@@ -7,7 +7,7 @@
 
 
 
-TestManaJ is a automation utility that allows Software Testers to perform the manual process of inputting test results into third-party test management tools, such as ALM.
+TestManaJ is a automation utility that allows Software Testers to perform the manual process of inputting test results into third-party test management tools, such as ALM or JIRA.
 
 <!---This utility, developed in Java, dynamically constructs API requests for common third-party test management tools, such as ALM.
 --->
@@ -18,12 +18,12 @@ Through the use of customizable upload properties, you will be able to *save tim
 
 
 
-##Features 
-* Dynamically construct API requests for common third-party test management tools. 
-* Easy to use coupled with high customization
-* Works with any java framework
-* Detailed reports made Easy
-* Prebuilt implementations with common frameworks
+##Features
+* Dynamically construct API Requests for common third-party Test Management Tools.
+* Easy to use coupled with High Customization
+* Works with any Java Framework
+* Detailed Reports made Easy
+* Prebuilt Implementations with Common Frameworks
 * Fast Execution
 
 ## Before you begin
@@ -93,7 +93,7 @@ To contribute to TestManaJ, follow these steps:
 
 Alternatively see the GitHub documentation on [creating a pull request](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request).
 
-## Contributors
+<!---## Contributors
 
 Thanks to the following people who have contributed to this project:
 
@@ -102,12 +102,16 @@ Thanks to the following people who have contributed to this project:
 * Justin Hanke 🐛
 
 You might want to consider using something like the [All Contributors](https://github.com/all-contributors/all-contributors) specification and its [emoji key](https://allcontributors.org/docs/en/emoji-key).
+--->
 
 ## Contact
 
-If you want to contact me you can reach me at <your_email@address.com>.
+If you have absolutely any questions or concerns do not hesitate to contact our support team.  
+
+ EY_NGeTAF_Support.GID@ey.net
 
 ## License
 <!--- If you're not sure which open license to use see https://choosealicense.com/--->
 
-This project uses the following license: [<license_name>](<link>).
+This project uses the following license: [CC0](<link>)
+
