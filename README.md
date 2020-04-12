@@ -113,5 +113,5 @@ If you have absolutely any questions or concerns do not hesitate to contact our 
 ## License
 <!--- If you're not sure which open license to use see https://choosealicense.com/--->
 
-This project uses the following license: [CC0](<link>)
+This project uses the following license: [CC0](LICENSE.md)
 
