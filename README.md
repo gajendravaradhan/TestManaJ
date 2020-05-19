@@ -1,26 +1,21 @@
 # TestManaJ
 
-<!--- These are examples. See https://shields.io for others or to customize this set of shields. You might want to include dependencies, project status and licence info here --->
 ![GitHub repo size](https://img.shields.io/github/repo-size/scottydocs/README-template.md)
 ![GitHub contributors](https://img.shields.io/github/contributors/scottydocs/README-template.md)
 
 
 
 
-TestManaJ is a automation utility that allows Software Testers to perform the manual process of inputting test results into third-party test management tools, such as ALM or JIRA.
-
-<!---This utility, developed in Java, dynamically constructs API requests for common third-party test management tools, such as ALM.
---->
-
-Through the use of customizable upload properties, you will be able to *save time* and maintain a **single** location for your manual and automated test execution results.
+TestManaJ is a automation utility that performs the process of injecting test results into third-party test management tools, such as ALM or JIRA.
 
 
-
+TestmanaJ's detailed and customizable data-driven properties *save the user time* in manually uploading automation results and facilitates a **single** location for manual and automated test execution reporting.
 
 
 ##Features
 * Dynamically construct API Requests for common third-party Test Management Tools.
-* Easy to use coupled with High Customization
+* Easy to use
+* High level of Customization
 * Works with any Java Framework
 * Detailed Reports made Easy
 * Prebuilt Implementations with Common Frameworks
@@ -28,61 +23,166 @@ Through the use of customizable upload properties, you will be able to *save tim
 
 ## Before you begin
 
-Before you begin, ensure you have met the following requirements:
+Ensure you have met the following requirements:
 
-* You have installed the latest version of maven.
-* You have installed the latest version of java.
-* You have an IDE.
+* You have installed the latest version of  <a href="https://maven.apache.org/download.cgi" > Maven 3.5 </a>
+* You have installed the latest version of  <a href="https://www.oracle.com/java/technologies/javase-downloads.html" > Java 8 </a>
+* You have an IDE
 
-<!--- These are just example requirements. Add, duplicate or remove as required
-* You have installed the latest version of `<coding_language/dependency/requirement_1>`
-* You have a `<Windows/Linux/Mac>` machine. State which OS is supported/which is not.
-* You have read `<guide/link/documentation_related_to_project>`.--->
 
 ## Installing TestManaJ
 
 To install TestManaJ, follow these steps:
 
-* Download Java Jar file
-* Import Jar into your project, or you can reference into your pom file, or any other method of your choosing.
-* Download ALM resources folder and place on your local. (Directory can be placed anywhere on your local or project)
+* Download Java Jar file from the GitHub repository.
+* We recommend to simply import the Jar into your project's IDE. However, you may also reference the JAR file into your `pom.xml`, or any other method of your choosing.
+* Lastly, download the ALM resources folder and place on your local. This directory can be placed anywhere on your native project or windows explorer.
 
 
-<!---Linux and macOS:
-```
-<install_command>
-```
-
-Windows:
-```
-<install_command>
-```
-## Using TestManaJ
-
-To use <project_name>, follow these steps:
-
-```
-<usage_example>
-```
-
-Add run commands and examples you think users will find useful. Provide an options reference for bonus points!
-
---->
 
 ## Configuring TestManaJ
-Here is a list of test run, properties available for setting:
+Below is a list of test run, and run step properties available for setting:
 
 
+<table>
+<tr>
+  <th>Test Run Properties</th>
+  <td>
+  comments
+| status
+| execution date
+| execution time
+| owner
+| cycle id
+| test config id
+| subtype id
+| test id
+| test name
+| ei system id
+| pc procedure name
+| has linkage
+| path
+| state
+| test config id
+| name
+| os build
+| os sp
+| test cycle name
+| os config
+| cycle
+| duration
+| last modified date/time
+| test description
+| assign rcyc
+| test sync
+| test instance
+| cycle name
+| pc reservation id
+| attachment(s)
+  </td>
+</tr>
+<tr>
+  <th>Test Step Properties</th>
+  <td>
+| Test id
+| Comp status
+| Description
+| Rel Obj id
+| Obj id
+| Has linkage
+| Execution date
+| Execution time
+| Desstep id
+| Has picture
+| Tree parent id
+| Bpt path
+| Actual
+| Step order
+| Level
+| Expected
+| Line number
+| Comp subtype name
+| Extended reference
+| Execution time
+| Parent id
+  </td>
+</tr>
+<tr>
 
-* (<provide list of step properties)
-* (You can configure any of these properties)
-* (<provide filled out hashmap examples such as with dynamic cucumber bdd or hardcode)
+</table>
+
+## Usage
+Below you will find an example of a hashmap that will pass the `ExecuteApp` class to ALM
+
+```java
+public class ExecuteApp {
+
+   public static void main(String[] args) throws Exception {
+
+       String testCaseName = "TC_19  Create a New Submission for a Full Application";
+
+        LinkedHashMap<String, String> runProperties = new LinkedHashMap<>();
+        runProperties.put("attachment", // Your file path );
+        runProperties.put("comments", "This is a comment");
+
+        LinkedHashMap<String, LinkedHashMap<String, String>> steps = new LinkedHashMap<>();
+
+        LinkedHashMap<String, String> stepProperties = new LinkedHashMap<>();
+        stepProperties.put("status", "Passed");
+        stepProperties.put("description", "Given I navigate to www.google.com");
+        stepProperties.put("execution-time",//"HH:MM:SS");
+        steps.put("Step 1", stepProperties);
+
+        stepProperties = new LinkedHashMap<>();
+        stepProperties.put("status", "Passed");
+        stepProperties.put("description", "Given I enter text search into search.bar");
+        stepProperties.put("expected", "Google Home Page Should Load");
+        steps.put("Step 2", stepProperties);
+
+        stepProperties = new LinkedHashMap<>();
+        stepProperties.put("status", "Failed");
+        stepProperties.put("description", "Then google.results are displayed");
+        stepProperties.put("actual", "Exception in thread \"main\" java.util.NoSuchElementException\n" +
+                "at java.util.Scanner.throwFor(Scanner.java:838)\n" +
+                "at java.util.Scanner.next(Scanner.java:1461)\n" +
+                "at java.util.Scanner.nextInt(Scanner.java:2091)\n" +
+                "at java.util.Scanner.nextInt(Scanner.java:2050)\n" +
+                "at Addition.main(Addition.java:16)");
+        stepProperties.put("attachment", //Your file path );
+        steps.put("Step 3", stepProperties);
+
+        stepProperties = new LinkedHashMap<>();
+        stepProperties.put("status", "No Run");
+        stepProperties.put("description", "Then google.logo is displayed");
+        stepProperties.put("execution-date",//"YYYY-MM-DD");
+        steps.put("Step 4", stepProperties);
+
+        stepProperties = new LinkedHashMap<>();
+        stepProperties.put("status", "No Run");
+        stepProperties.put("description", "Then I click google.home");
+        steps.put("Step 5", stepProperties);
+
+        String almResoucesPath = SystemUtils.getUserDir().toString();
+
+        updateALMForTestCase(testCaseName, steps, runProperties, almResoucesPath);
+   }
+
+   public static void updateALMForTestCase(String testCaseName, LinkedHashMap<String, LinkedHashMap<String, String>> steps, LinkedHashMap<String, String> runProperties, String almResourcesPath) throws Exception {
+      App executeApp = new App(almResourcesPath);
+      executeApp.updateTestRun(testCaseName, steps, runProperties);
+   }
+
+}
+```
+
+
 
 ## Executing in TestManaJ
-* Call the method then double check in ALM.
+* The only thing left to do is call the method then validate results in your third-party test managment tool.
+
 
 ## Contributing to TestManaJ
-<!--- If your README is long or you have some specific process or steps you want contributors to follow, consider creating a separate CONTRIBUTING.md file--->
+
 To contribute to TestManaJ, follow these steps:
 
 1. Fork this repository.
@@ -104,14 +204,12 @@ Thanks to the following people who have contributed to this project:
 You might want to consider using something like the [All Contributors](https://github.com/all-contributors/all-contributors) specification and its [emoji key](https://allcontributors.org/docs/en/emoji-key).
 --->
 
-## Contact
+<!---## Contact
 
 If you have absolutely any questions or concerns do not hesitate to contact our support team.  
 
- EY_NGeTAF_Support.GID@ey.net
+ EY_NGeTAF_Support.GID@ey.net --->
 
 ## License
-<!--- If you're not sure which open license to use see https://choosealicense.com/--->
 
-This project uses the following license: [CC0](LICENSE.md)
-
+This project uses the following license: [CC0](<link>)
