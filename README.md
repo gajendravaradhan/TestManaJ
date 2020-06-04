@@ -12,7 +12,7 @@ TestManaJ is a automation utility that performs the process of injecting test re
 TestmanaJ's detailed and customizable data-driven properties *save the user time* in manually uploading automation results and facilitates a **single** location for manual and automated test execution reporting.
 
 
-##Features
+## Features
 * Dynamically construct API Requests for common third-party Test Management Tools.
 * Easy to use
 * High level of Customization
@@ -21,23 +21,23 @@ TestmanaJ's detailed and customizable data-driven properties *save the user time
 * Prebuilt Implementations with Common Frameworks
 * Fast Execution
 
+
 ## Before you begin
 
-Ensure you have met the following requirements:
+Ensure you have met the following minimum requirements:
 
-* You have installed the latest version of  <a href="https://maven.apache.org/download.cgi" > Maven 3.5 </a>
-* You have installed the latest version of  <a href="https://www.oracle.com/java/technologies/javase-downloads.html" > Java 8 </a>
-* You have an IDE
+* You have installed atleast <a href="https://maven.apache.org/download.cgi" > Maven 3.5 </a> or higher
+* You have installed atleast <a href="https://www.oracle.com/java/technologies/javase-downloads.html" > Java 8 </a> or higher
+* You use an IDE
 
 
 ## Installing TestManaJ
 
 To install TestManaJ, follow these steps:
 
-* Download Java Jar file from the GitHub repository.
-* We recommend to simply import the Jar into your project's IDE. However, you may also reference the JAR file into your `pom.xml`, or any other method of your choosing.
-* Lastly, download the ALM resources folder and place on your local. This directory can be placed anywhere on your native project or windows explorer.
-
+* Download the jar file from the GitHub repository.
+* Import the Jar into your project's IDE. You may also reference the JAR file into your `pom.xml`, or any other method of your choosing.
+* Finally, download the ALM resources folder and place on your local. This directory can be placed anywhere on your native project or windows explorer.
 
 
 ## Configuring TestManaJ
@@ -115,11 +115,10 @@ Below is a list of test run, and run step properties available for setting:
 Below you will find an example of a hashmap that will pass the `ExecuteApp` class to ALM
 
 ```java
-public class ExecuteApp {
 
-   public static void main(String[] args) throws Exception {
+   public Foo bar() {
 
-       String testCaseName = "TC_19  Create a New Submission for a Full Application";
+       String testCaseName = "Google Search - Negative test";
 
         LinkedHashMap<String, String> runProperties = new LinkedHashMap<>();
         runProperties.put("attachment", // Your file path );
@@ -172,7 +171,6 @@ public class ExecuteApp {
       executeApp.updateTestRun(testCaseName, steps, runProperties);
    }
 
-}
 ```
 
 
