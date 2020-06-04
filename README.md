@@ -12,7 +12,7 @@ TestManaJ is a automation utility that performs the process of injecting test re
 TestmanaJ's detailed and customizable data-driven properties *save the user time* in manually uploading automation results and facilitates a **single** location for manual and automated test execution reporting.
 
 
-##Features
+## Features
 * Dynamically construct API Requests for common third-party Test Management Tools.
 * Easy to use
 * High level of Customization
